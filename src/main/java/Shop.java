@@ -59,7 +59,7 @@ public class Shop
             em.close();
 
             System.out.println("Got " + artikeln.size() + " articles.");
-            if(artikeln.isEmpty()==0) {
+            if(artikeln.isEmpty()) {
                 return populateInitialShop();
             }
             return artikeln;
