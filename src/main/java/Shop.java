@@ -59,6 +59,9 @@ public class Shop
             em.close();
 
             System.out.println("Got " + artikeln.size() + " articles.");
+            if(artikeln.isEmpty()==0) {
+                return populateInitialShop();
+            }
             return artikeln;
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,5 +79,13 @@ public class Shop
         list.add(new Artikel(3, "Süsse Hasenpaar", "Süsse Hasenpaar",
                 "hasen.png"));
         return list;
+    }
+
+    private List<Artikel> populateInitialShop() {
+        List<Artikel> l = new LinkedList<Artikel>();
+        l.add(new Artikel(0, "pantoffeln-süss", "filzschuhe", "filzschuhe.jpg", new Date()));
+        l.add(new Artikel(0, "handtasche grün", "Super Luxus zum spazieren", "handtasche.jpg", new Date()));
+        l.add(new Artikel(0, "hasen", "ein Paar", "hasen.png", new Date()));
+        return l;
     }
 }
